@@ -28,6 +28,18 @@ while counter < 100:
                 requests.get(f'{API_URL}{BOT_TOKEN}/sendMessage?chat_id={chat_id}&text={PHOTO_REPLY_TEXT}')
             elif result['message'].get('sticker'):
                 requests.get(f'{API_URL}{BOT_TOKEN}/sendMessage?chat_id={chat_id}&text={STICKER_REPLY_TEXT}')
+            elif result['message'].get('animation'):
+                requests.get(f'{API_URL}{BOT_TOKEN}/sendMessage?chat_id={chat_id}&text=Ого, ты мне прислал Гифку!')
+            elif result['message'].get('document'):
+                requests.get(f'{API_URL}{BOT_TOKEN}/sendMessage?chat_id={chat_id}&text=Ого, ты мне прислал файл!')
+            elif result['message'].get('video'):
+                requests.get(f'{API_URL}{BOT_TOKEN}/sendMessage?chat_id={chat_id}&text=Ого, ты мне прислал видео!')
+            elif result['message'].get('voice'):
+                requests.get(f'{API_URL}{BOT_TOKEN}/sendMessage?chat_id={chat_id}&text=Ого, ты мне прислал войс!')
+            elif result['message'].get('location'):
+                requests.get(f'{API_URL}{BOT_TOKEN}/sendMessage?chat_id={chat_id}&text=Ого, ты мне прислал локацию!')
+            elif result['message'].get('poll'):
+                requests.get(f'{API_URL}{BOT_TOKEN}/sendMessage?chat_id={chat_id}&text=Ого, ты мне прислал опрос!')
 
     time.sleep(1)
     counter += 1
